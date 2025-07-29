@@ -4,10 +4,12 @@ import { Service } from "./entity/service"
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
-    database: "./db.sql",
+    database: "db.sql",
     synchronize: true,
     logging: true,
     entities: [Service],
     subscribers: [],
     migrations: []
 })
+
+await AppDataSource.initialize()
