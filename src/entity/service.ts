@@ -7,5 +7,7 @@ export class Service{
 
     @Column()
     name: string
+    
+    @Column()
     shortText: string
 }
