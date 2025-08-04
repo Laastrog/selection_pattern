@@ -6,10 +6,10 @@ export const AppDataSource = new DataSource({
     type: "sqlite",
     database: "db.sql",
     synchronize: true,
-    logging: true,
     entities: [Service],
     subscribers: [],
-    migrations: []
+    migrations: [],
+    logging: ["error"]
 })
 
 await AppDataSource.initialize()

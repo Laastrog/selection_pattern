@@ -1,7 +1,15 @@
+"use client"
 import Link from "next/link";
+import { useActionState } from "react";
+import { createServices } from "./action";
 
+export const initialState = {
+    name: "",
+    shortText: "",
+}
 
 export default function ServicePage(){
+    const [state, formAction, peddinng] = useActionState(createServices, "")
     return (
         <>
             <div className="flex gap-2 p-4 items-center">
@@ -9,7 +17,7 @@ export default function ServicePage(){
                 <Link href={"/admin-zone/project-post"}>Мэнювка дабавлэныэ проэээкта</Link>
             </div>
             <br />
-            <form action="/api/service" method="POST" className="max-w-sm mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all ">
+            <form action={formAction} method="POST" className="max-w-sm mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all ">
                 <div className="flex flex-col gap-8 p-6 bg-zinc-300 shadow-md overflow-hidden items-center-safe">
                     <div className="flex flex-col">
                         <label className="text-xl text-zinc-500" htmlFor="name">Название услуги</label>
@@ -19,6 +27,7 @@ export default function ServicePage(){
                         <label className="text-xl text-zinc-500" htmlFor="name">Краткий обзор услуги</label>
                         <textarea className="bg-neutral-600 rounded-2xl w-80 px-5 resize-none" name="shortText" rows={3}/>
                     </div>
+                    {state && <p>{state}</p>}
                     <button type="submit" className=" text-xl h-9 w-40 rounded-xl bg-gray-500">Опубликовать</button>
                 </div>
             </form>
