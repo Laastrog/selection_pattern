@@ -1,12 +1,10 @@
 "use server"
 
-import { POST } from "@/app/api/service/route"
-
-export async function createServices(prevState:any, formData: FormData){
+export async function createServices(prevState:string, formData: FormData){
     const name = formData.get("name")
     const shortText = formData.get("shortText")
 
-    const result = await fetch("/api/service",{
+    const result = await fetch("http://localhost:1200/api/service",{
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({name, shortText})

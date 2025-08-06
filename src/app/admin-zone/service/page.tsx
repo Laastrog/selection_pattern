@@ -9,7 +9,7 @@ export const initialState = {
 }
 
 export default function ServicePage(){
-    const [state, formAction, peddinng] = useActionState(createServices, "")
+    const [state, formAction, pending] = useActionState(createServices, "")
     return (
         <>
             <div className="flex gap-2 p-4 items-center">
@@ -28,7 +28,7 @@ export default function ServicePage(){
                         <textarea className="bg-neutral-600 rounded-2xl w-80 px-5 resize-none" name="shortText" rows={3}/>
                     </div>
                     {state && <p>{state}</p>}
-                    <button type="submit" className=" text-xl h-9 w-40 rounded-xl bg-gray-500">Опубликовать</button>
+                    <button type="submit" disabled={pending} className=" text-xl h-9 w-40 rounded-xl bg-gray-500">Опубликовать</button>
                 </div>
             </form>
         </>

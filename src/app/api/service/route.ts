@@ -22,9 +22,16 @@ export async function POST(request: NextRequest){
     // const queryRunner = AppDataSource.createQueryRunner()
     // await queryRunner.connect()
 
-    const data = await request.formData()
-    const name = data.get("name")
-    const shortText = data.get("shortText")
+    const {name, shortText} = await request.json()
+
+    // if(!name || shortText){
+
+    // }
+
+    // const data = await request.formData()
+    // const name = data.get("name")
+    // const shortText = data.get("shortText")
+
     const serviceRepository = AppDataSource.getRepository("service")
 
     const result = await serviceRepository.save({name, shortText})
