@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "jose": "^6.0.12",
     "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
-    "typeorm": "^0.3.25"
+    "swr": "^2.3.4",
+    "typeorm": "^0.3.25",
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -3,12 +3,15 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { createServices } from "./action";
 
-export const initialState = {
-    name: "",
-    shortText: "",
-}
+// export const initialState = {
+//     name: "",
+//     shortText: "",
+// }
 
-export default function AppService(uslugi:any){
+export default function AppService( 
+    // data:any
+    uslugi:any
+){
     const [state, formAction, pending] = useActionState(createServices, "")
     return (
         <>
@@ -33,6 +36,9 @@ export default function AppService(uslugi:any){
                 </div>
             </form>
             <div>
+    {/* {data.map((post: { name: string; shortText: string }) => (
+        <li key={post.name}>{post.shortText}</li>
+      ))} */}
                 {state && <p>{state}</p>}
             </div>
             
