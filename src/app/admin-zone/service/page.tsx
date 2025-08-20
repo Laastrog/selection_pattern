@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import AppService from "./appService";
 import useSWR from "swr";
 

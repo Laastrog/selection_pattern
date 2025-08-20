@@ -21,7 +21,7 @@ export default function AppService(
             </div>
 
             <br />
-            <form action={formAction} method="POST" className="max-w-sm mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all ">
+            <form action={formAction} className="max-w-sm mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all ">
                 <div className="flex flex-col gap-8 p-6 bg-zinc-300 shadow-md overflow-hidden items-center-safe">
                     <div className="flex flex-col">
                         <label className="text-xl text-zinc-500" htmlFor="name">Название услуги</label>

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ydbjs/core": "^6.0.1-alpha.32",
+    "@ydbjs/query": "^6.0.1-alpha.32",
     "jose": "^6.0.12",
     "next": "15.4.3",
     "react": "19.1.0",
