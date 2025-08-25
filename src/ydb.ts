@@ -11,5 +11,6 @@ await driver.ready();
 export const sql = query(driver)
 
 const result = await sql`SELECT * FROM services`
+// const resultDel = await sql`DELETE FROM services`
 // Автоинкименция
 console.log(result)
