@@ -1,16 +1,28 @@
 "use server"
+import {sql} from "@/ydb"
 
-export async function createServices(prevState:string, formData: FormData){
+
+export async function createServices(prevState:string | [], formData: FormData){
     const name = formData.get("name")
-    const shortText = formData.get("shortText")
+    const short_text = formData.get("shortText")
+  
+    const result = await sql`INSERT INTO services (name, short_text) VALUES(${name}, ${short_text});`
+    return "result"
+}
 
-    const result = await fetch("http://localhost:1200/api/service",{
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name, shortText})
-    })
+// interface Service {
+//   id: number;
+//   name: string;
+//   short_text: string;
+// }
 
-    const data = await result.json()
-    console.log("DATAACTION", data)
-    return "ul;jkl;kl;lkk"
+export async function GetPost() {
+  const result = await sql`SELECT * FROM services`;
+//   const data = result.map((row: any): Service => ({
+//     id: row.id,
+//     name: row.name,
+//     short_text: row.short_text
+//   }));
+//   return data
+  return result
 }

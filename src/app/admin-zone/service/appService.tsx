@@ -1,18 +1,29 @@
 "use client"
 import Link from "next/link";
-import { useActionState } from "react";
+import React, { useActionState, useState } from "react";
 import { createServices } from "./action";
+// import {AddPost} from "@/ydb"
 
 // export const initialState = {
 //     name: "",
 //     shortText: "",
 // }
 
+export interface AppServiceUslui{
+    uslugi:ServiceProps[]
+}
+export type ServiceProps = {
+        id: number
+        name: string
+        short_text: string
+}
 export default function AppService( 
-    // data:any
-    uslugi:any
+    // data:any,
+    {uslugi}: AppServiceUslui
+    
 ){
     const [state, formAction, pending] = useActionState(createServices, "")
+    const [stateUslugi, setstateUslugi] = useState(uslugi)
     return (
         <>
             <div className="flex gap-2 p-4 items-center">
@@ -36,10 +47,18 @@ export default function AppService(
                 </div>
             </form>
             <div>
-    {/* {data.map((post: { name: string; shortText: string }) => (
-        <li key={post.name}>{post.shortText}</li>
-      ))} */}
-                {state && <p>{state}</p>}
+
+{/* Читать доку + попытать Аврору */}
+
+           {stateUslugi.length ? (
+            <div className="p-5 shadow-2xl">
+                {stateUslugi.map(({id, name, short_text})=>(
+                   <p key={id}>#{id}, {name}, {short_text}</p>
+                ))}
+            </div>
+        ): null}
+           
+            
             </div>
             
         </>

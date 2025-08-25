@@ -1,12 +1,13 @@
 // "use client"
-import AppService from "./appService";
+import { GetPost } from "./action";
+import AppService, { AppServiceUslui } from "./appService";
 import useSWR from "swr";
 
 export default async function ServicePage(){
 // let url = "http://localhost:1200/api/service"
 // const fetcher = (url: string | URL | Request) => fetch(url).then((r) => r.json())
-    const data = await fetch("http://localhost:1200/api/service")
-    const uslugi = await data.json()
+    const data = await GetPost()
+    const uslugi: any[] = data[0]
     // const {data, error, isLoading} = useSWR("http://localhost:1200/api/service", fetcher)
 
 //   if (isLoading) return <div>Loading...</div>
