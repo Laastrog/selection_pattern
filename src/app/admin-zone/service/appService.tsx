@@ -20,34 +20,33 @@ export default function AppService(
     const [stateUslugi, setstateUslugi] = useState(uslugi)
 
     return (
-        <div className="flex flex-col h-screen m-auto ">
+        <div className="flex flex-col min-h-screen m-auto">
             <div className="flex gap-2 p-4 items-center grid-rows-2 " >
-            <Link className="font-bold text-lg text-gray-800 mb-1 p-3 " href={"/admin-zone/"}>
-                <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14"><path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/></svg></Link>
-            <Link className="font-bold text-lg text-gray-800 mb-1 " href={"/admin-zone/service"}>Добавить услуги</Link>
-                <p className="font-bold text-lg text-gray-800 mb-1" >|</p>
-            <Link className="font-bold text-lg text-gray-800 mb-1" href={"/admin-zone/projects"}>Просмотр проектов</Link>
-        </div>
-
+                <Link className="font-bold text-lg text-gray-800 mb-1 p-3 " href={"/admin-zone/"}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M16 20H5a1 1 0 0 1-1-1v-7.86a1 1 0 0 1 .281-.695l5.5-5.7a1 1 0 0 1 1.439 0l2.8 2.9l-1.43 1.402L10.5 6.88L6 11.54v6.455h11v1A1 1 0 0 1 16 20Zm4-6h-8v-2h8v2Z"/></svg></Link>
+                <Link className="font-bold text-lg text-gray-800 mb-1 " href={"/admin-zone/service"}>Добавить услуги</Link>
+                    <p className="font-bold text-lg text-gray-800 mb-1" >|</p>
+                <Link className="font-bold text-lg text-gray-800 mb-1" href={"/admin-zone/projects"}>Просмотр проектов</Link>
+            </div>
             <br />
             <form action={formAction} className="max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div className="flex flex-col gap-8 p-8 bg-gradient-to-br bg-gray-100 shadow-lg overflow-hidden items-center rounded-xl">
-                     <div className="flex flex-col">
+                <div className="flex flex-col gap-8 p-8 bg-gradient-to-br bg-gray-100 shadow-lg overflow-hidden items-center rounded-xl w-full max-w-md mx-auto">
+                     <div className="flex flex-col w-full">
                         <label className="text-xl font-extralight text-gray-800" htmlFor="name">Название услуги</label>
-                        <input className=" bg-neutral-300 w-80 px-5 text-gray-800 rounded-lg hover:shadow-md transition-shadow" type="text" name="name" />
+                        <input className="bg-neutral-300 w-full px-5 text-gray-800 rounded-lg hover:shadow-md transition-shadow" type="text" name="name" />
                     </div>
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col w-full">
                         <label className="text-xl text-gray-800" htmlFor="name">Краткий обзор услуги</label>
-                        <textarea className="bg-neutral-300 w-80 px-5 text-gray-800 resize-none  rounded-lg hover:shadow-md transition-shadow" name="shortText" rows={3}/>
+                        <textarea className="bg-neutral-300 w-full px-5 text-gray-800 resize-none rounded-lg hover:shadow-md transition-shadow" name="shortText" rows={3}/>
                     </div>
                     
-                    <button type="submit" disabled={pending} className=" text-xl h-9 w-40 rounded-lg text-gray-200 bg-gray-800">Опубликовать</button>
+                    <button type="submit" disabled={pending} className="text-xl h-9 w-full max-w-xs rounded-lg text-gray-200 bg-gray-800">Опубликовать</button>
                 </div>
             </form>
-            <div className="flex flex-col mx-auto gap-10">
+            <div className="flex flex-col w-full max-w-4xl mx-auto gap-10">
 
            {stateUslugi.length ? (
-            <div className="mt-8 p-6 bg-white rounded-xl shadow-lg">
+            <div className="mt-8 p-6 bg-white rounded-xl shadow-lg w-full scr">
                 {stateUslugi.map(({id, name, short_text})=>(
                 <div key={id} className="mb-4 p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     <h3 className="font-bold text-lg text-gray-800 mb-1">#{id} /{name}</h3>
@@ -56,7 +55,11 @@ export default function AppService(
                 </div>
                 ))}
             </div>
-            ): null}
+            ): <div className="mt-8 p-6 bg-white rounded-xl shadow-lg w-full scr">
+                    <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="font-bold text-lg text-gray-800 mb-1">Здесь пока пусто...</h3>
+                    </div>
+                </div>}
             </div>  
         </div>
     )
