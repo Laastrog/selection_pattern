@@ -1,7 +1,6 @@
 import type { NextRequest } from "next/server";
 import { AppDataSource}  from "@/data-source";
 
-
 export async function GET(request: NextRequest){
 
     const serviceRepository = AppDataSource.getRepository("service")
@@ -23,10 +22,6 @@ export async function POST(request: NextRequest){
     // await queryRunner.connect()
 
     const {name, shortText} = await request.json()
-
-    // if(!name || shortText){
-
-    // }
 
     // const data = await request.formData()
     // const name = data.get("name")

@@ -1,6 +1,5 @@
 "use server"
 
-import { FormState } from "@/lib/definitions"
 import { createSession } from "@/lib/session"
 import { redirect } from "next/navigation"
 
@@ -24,11 +23,11 @@ export async function loginAction(prevState: any, formData: FormData ){
         //       message: 'Произошла ошибка при создании вашей учетной записи.',
         //     }
         //   }
-        return login && password && console.log("!!")
+        return login && password
 
         
     }
-    return console.log("!!!")
+    return
 
     
 }

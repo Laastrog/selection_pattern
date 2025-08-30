@@ -1,7 +1,6 @@
 import 'server-only'
 import { SignJWT, jwtVerify } from 'jose'
 import { cookies } from 'next/headers'
-// import { SessionPayload } from '@/app/lib/definitions'
 
 const secretKey = "s76fJnTWmO4Vz2a_YsW1ol2-iSB_ZAoo9U3skvsYLuY"
 // TextEncoder. Кодирует строку в поток байтов с использованием кодировки UTF-8

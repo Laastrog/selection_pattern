@@ -10,10 +10,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@yandex-cloud/nodejs-sdk": "^2.9.0",
     "@ydbjs/core": "^6.0.1-alpha.32",
     "@ydbjs/query": "^6.0.1-alpha.32",
     "jose": "^6.0.12",
     "next": "15.4.3",
+    "node-jose": "^2.2.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "reflect-metadata": "^0.2.2",

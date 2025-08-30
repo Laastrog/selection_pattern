@@ -26,6 +26,6 @@
     "experimentalDecorators": true,
 
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/ydb.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/ydb.ts", "src/jwtgenerate.js"],
   "exclude": ["node_modules"]
 }
