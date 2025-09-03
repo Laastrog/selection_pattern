@@ -2,7 +2,7 @@ import { AccessTokenCredentialsProvider } from '@ydbjs/auth/access-token';
 import { Driver } from '@ydbjs/core';
 import { query } from '@ydbjs/query'
 const provider = new AccessTokenCredentialsProvider({
-  token: 't1.9euelZqOzYmZkJWcmZCczpuJzZCUiu3rnpWal4mVzcubjo_IzMfNzo-LkpLl8_cCajI6-e9NZmV4_t3z90IYMDr5701mZXj-zef1656VmpHJm86bk5zJksqXzJnHlI2d7_zN5_XrnpWaiZ6Lmc-Nz4_HzM6MjszIlJzv_cXrnpWakcmbzpuTnMmSypfMmceUjZ0.kh00ZHdDslSQpGVPCXzG40QZNaJXczluQLY7RMdtIRXV26Uv4L2-d2OLiKfrb4KKFsBTqOGXm4GQpHQSkJIFCg',});
+  token: 'https://yandex.cloud/ru/docs/iam/operations/iam-token/create-for-sa#before-you-begin',});
 
 const driver = new Driver('grpcs://ydb.serverless.yandexcloud.net:2135/?database=/ru-central1/b1g4l5tq0blutl5mrrcf/etnrle3o7gcuqg8aru9p', {
   credentialsProvider: provider,
